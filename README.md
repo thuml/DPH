@@ -79,7 +79,7 @@ You can evaluate the Mean Average Precision(MAP) result on each dataset using th
 dataset_name = imagenet, nuswide_81 or coco
 python models/predict/dataset_name/predict_parallel.py --gpu gpu_id --model_path your_caffemodel_path --save_path the_path_to_save_your_hash_code
 ```
-We provide some trained models for each dataset for each code length in our experiment for evaluation. You can download them [here]() if you want to use them.
+We provide some trained models for each dataset for each code length in our experiment for evaluation. You can download them [here](https://drive.google.com/drive/folders/1RxH7Dj08FEPiOuD9GsAAO9lpqzqQQgWm?usp=sharing) if you want to use them.
 
 If you have generated the hash code by the previous step or by other method and want to test the MAP of the hash code. You can specify the code_path parameter.
 ```
