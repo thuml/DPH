@@ -98,4 +98,3 @@ MANIFEST-*
 # log and script
 nohup.out
 hyperopt_test.py
-train.sh

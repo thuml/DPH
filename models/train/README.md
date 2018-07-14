@@ -41,16 +41,13 @@ layer {
   bottom: "label2"
   top: "pairwise_loss"
   pairwise_param {
-    class_num: 100.0
     l_threshold: 15
     q_threshold: 15
     l_lambda: 1
     sigmoid_param: 0.2 # 10 / the length of code
-    continous_similarity: false
   }
 }
 ```
 Set the sigmoid_param to 10 / code length.
 
-## Different datasets
-All the parameters are set for the datasets in our experiments. If you want to perform our methods on your own dataset, you need to calculate (the sum of number of 0s and number of 1s) / the number of 1s in your train set and set class_num parameter in pairwise_loss layer.
+All the parameters are set for the datasets in our experiments. If you want to perform our methods on your own dataset, you need to tune the network parameters.

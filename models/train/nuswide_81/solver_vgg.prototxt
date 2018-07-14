@@ -8,4 +8,4 @@ max_iter: 10000
 momentum: 0.9
 weight_decay: 0.0005
 snapshot: 1000
-snapshot_prefix: "models/train/nuswide_81/caffemodel/nuswide_81_64_vgg"
+snapshot_prefix: "models/train/nuswide_81/caffemodel/nuswide_81_48_vgg"

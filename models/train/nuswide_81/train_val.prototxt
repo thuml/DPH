@@ -406,7 +406,6 @@ layer {
   bottom: "label2"
   top: "pairwise_loss"
   pairwise_param {
-    class_num: 5.0
     l_threshold: 15
     q_threshold: 15
     l_lambda: 1
