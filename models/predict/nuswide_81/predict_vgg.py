@@ -102,7 +102,7 @@ def get_codes_and_labels(params):
         if len(lines) < batch_size:
             break;
         
-    return dict(database_code=np.array(database_code), database_labels=np.array(database_labels), validation_code=np.array(validation_code), validation_labels=np.array(validation_labels))
+    return dict(database_code=np.sign(np.array(database_code)), database_labels=np.array(database_labels), validation_code=np.sign(np.array(validation_code)), validation_labels=np.array(validation_labels))
 
 
 if __name__ == "__main__":
