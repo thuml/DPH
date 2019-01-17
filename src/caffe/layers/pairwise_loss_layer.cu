@@ -221,7 +221,7 @@ void PairwiseLossLayer<Dtype>::Forward_gpu(
   Dtype loss, count_num;
   caffe_gpu_gemm(CblasNoTrans, CblasTrans, outer_num_, outer_num_, label_dim_, 
       Dtype(1.0), label, label1, Dtype(0.0), similarity);
-  if (continous_similarity_){
+  /*if (continous_similarity_){
     caffe_gpu_gemm(CblasNoTrans, CblasTrans, outer_num_, outer_num_, label_dim_, 
       Dtype(1.0), label, label, Dtype(0.0), similarity1);
     caffe_gpu_gemm(CblasNoTrans, CblasTrans, outer_num_, outer_num_, label_dim_, 
@@ -233,7 +233,7 @@ void PairwiseLossLayer<Dtype>::Forward_gpu(
     ContinousSimilarityProcess<Dtype><<<CAFFE_GET_BLOCKS(nthreads), 
       CAFFE_CUDA_NUM_THREADS>>>(nthreads, similarity, similarity1, similarity2, loss_data, outer_num_);
     caffe_gpu_memcpy(nthreads*sizeof(Dtype), loss_data, similarity1);
-  }
+  }*/
 
   SimilarityProcess<Dtype><<<CAFFE_GET_BLOCKS(nthreads), 
       CAFFE_CUDA_NUM_THREADS>>>(nthreads, similarity, label_dim_);
@@ -346,10 +346,10 @@ void PairwiseLossLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
     caffe_gpu_scal(nthreads, Dtype(1. / ave_focal_), diff);
     //
        
-    if(continous_similarity_){
+    /*if(continous_similarity_){
       caffe_gpu_mul(nthreads, diff, similarity1, diff);
       caffe_gpu_scal(nthreads, Dtype(4), diff);
-    }
+    }*/
     //copy to bottom_diff
     Dtype count_num;
     caffe_gpu_asum(nthreads, count, &count_num);
